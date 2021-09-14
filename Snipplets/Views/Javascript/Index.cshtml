@@ -1,0 +1,87 @@
+﻿@model Snipplets.Models.Javascript
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+
+<h2>Toastr</h2>
+
+<p>Requirements: NUGET Package: toastr</p>
+
+<div class="row">
+    <div class=" col-md-6">
+        <button class="btn btn-default" name ="weAll" id="Oliver" onmouseout="messageclear();"> Oliver's Button </button>
+        <button class="btn btn-default" name ="weAll" id="Peter" onmouseout="messageclear();"> Peter's Button </button>
+        <button class="btn btn-default" name ="weAll" id="Maria" onmouseover="style.color='red'" onmouseout="style.color='black'"> Maria's Button </button>
+
+    </div>
+
+</div>
+
+<br />
+
+<div class="row">
+    <div class=" col-md-6">
+        <div id="message"></div>
+    </div>
+
+</div>
+
+<br />
+
+<div class="row">
+    <div class=" col-md-6">
+        <button class="btn btn-default" id="dome" onmouseover="messagetxt('Huuuhhh! Doubleclick the button ...');" ondblclick="gotoDome()" > JS DOME events </button>
+    </div>
+
+</div>
+
+
+
+<script src="~/Scripts/myOwnInternal.js"></script>
+
+
+@section Scripts{
+
+    <script type="text/javascript">
+
+        $(function () {
+            toastr.info("TOASTR", "Welcome to");
+
+            $("#Oliver").click(function () {
+                alert("A simple BLOCKING HTML alert!");
+
+            });
+
+            $("#Peter").click(function () {
+                toastr.success("Successfully pressed NONBLOCKING toastr button", "Our Toastr Title");
+
+            });
+
+            $("#Maria").click(function () {
+                toastr.warning("Let's see, what is possible", "toastr reference");
+
+                setTimeout(toastrpage, 1500);
+
+
+            });
+
+            function toastrpage() {
+                // call toastr homepage in seperate tab
+                var win = window.open('https://codeseven.github.io/toastr/', '_oliver');
+                // win.focus();
+            }
+
+            
+
+        });
+
+
+    </script>
+
+
+}

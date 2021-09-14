@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+Persistenz:  @Html.ActionLink("Save the model data", "Save") |
+@Html.ActionLink("Load the model data", "Load") |
+@Html.ActionLink("Clean Up Uploaded Files", "Clean")
+
+<br /><br /> 
+@TempData["Message"]

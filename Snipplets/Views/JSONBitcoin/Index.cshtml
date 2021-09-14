@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Snipplets.Models.JSONBitcoin>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Bitcoin Trading</h4>
+
+<p>
+    @Html.ActionLink("Buy/Sell", "BuySell")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Time)
+        </th>
+
+        @*
+        <th>
+            @Html.DisplayNameFor(model => model.ChartName)
+        </th>
+        *@
+        
+        <th>
+            @Html.DisplayNameFor(model => model.PriceEur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transaction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Time)
+    </td>
+
+    @*
+    <td>
+        @Html.DisplayFor(modelItem => item.ChartName)
+    </td>
+    *@
+
+    <td>
+        @Html.DisplayFor(modelItem => item.PriceEur)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Transaction)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Amount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Active)
+    </td>
+    <td>
+        
+    </td>
+</tr>
+}
+
+</table>
+
+<p> Realtime prices are provided by Coinbase.com &reg;</p>

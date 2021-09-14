@@ -1,0 +1,33 @@
+﻿@model Snipplets.Models.Employee
+
+
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FileNamePicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FileNamePicture)
+        </dd>
+        <dt>
+            Picture:
+        </dt>
+        
+        <dd>
+            @{var imagepathpng = Model.FileNamePicture;
+                if (imagepathpng == "")
+                { 
+                        <p>No picture uploaded yet</p>
+                } else
+                { 
+                    string _Path = "../UploadedFiles/" + Model.FileNamePicture;
+                    
+                    <img src="@_Path" style="width:150px;" alt=""> }
+
+                }
+           
+        </dd>
+
+
+    </dl>

@@ -1,0 +1,74 @@
+﻿@model Snipplets.Models.HTMLHelpers
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HTMLHelpers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TextBox)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TextBox)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TextArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TextArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckBox)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckBox)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckBox2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckBox2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hidden)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hidden)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Editor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Editor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

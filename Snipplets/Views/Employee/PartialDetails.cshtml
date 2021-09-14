@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Snipplets.Models.Employee>
+
+@{
+    ViewBag.Title = "PartialDetails";
+}
+
+<h2>PartialDetails</h2>
+
+<p>
+    @Html.ActionLink("Go Back", "Index")
+</p>
+
+<h4>Employee</h4>
+<hr />
+<div class="container">
+
+
+    @foreach (var item in Model)
+    {
+
+        <div class="row">
+            <div class="col-sm-4">
+
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Age)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </dd>
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Active)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Active)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Sex)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(modelItem => item.Sex)
+                    </dd>
+
+                </dl>
+            </div>
+
+
+            <div class="col-sm-4">
+                @{ Html.RenderPartial("EmployeeData", item); }
+            </div>
+        </div>
+
+
+    }
+
+
+</div>
+@{ Html.RenderPartial("SummaryDetails"); }
+
+
